@@ -1,0 +1,8 @@
+{
+  "name": "app-wcmp-lojas",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
