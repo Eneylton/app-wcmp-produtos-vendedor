@@ -14,13 +14,23 @@ export class ProdutoPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public WP: WoocommerceProvider) {
+    public woo: WoocommerceProvider) {
 
-    this.wooCommerce = WP.init(true);
+    this.wooCommerce = woo.init(true);
+
+    this.woo.Wcmp.getAsync("vendors").then((data)=>{
+      console.log(JSON.parse(data.body));
+
+    });
+
   
   }
 
   ionViewDidLoad() {
+
+    
+
+
     this.wooCommerce.getAsync("products").then((data) => {
      
       this.products = JSON.parse(data.body);
